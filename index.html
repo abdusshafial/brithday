@@ -941,6 +941,43 @@
 }
 @media(prefers-reduced-motion:reduce){.farewell-night *{animation:none!important}.farewell-star{opacity:.65}.farewell-door,.farewell-secret{transition:none}.farewell-tear{display:none}}
 
+
+/* Rain on the window, and a little question behind the mist. */
+.rain-memory{max-width:740px;margin:64px auto 12px;text-align:center}
+.rain-eyebrow{color:#d9b3a8;font-size:.64rem;letter-spacing:.22em;text-transform:uppercase}
+.rain-memory h2{font:600 clamp(1.7rem,4vw,2.6rem)/1.3 'Playfair Display',serif;color:#ffe4d0;margin:12px 0}
+.rain-intro{font-size:.86rem;line-height:1.9;color:#cfafb9;max-width:420px;margin:0 auto 23px}
+.rain-window{position:relative;isolation:isolate;overflow:hidden;height:390px;border:9px solid #2a1523;border-radius:130px 130px 12px 12px;background:linear-gradient(180deg,#151b30,#35223d 58%,#6e3547);box-shadow:0 0 0 1px #d59f7e66,inset 0 0 70px #090e1e,0 25px 65px #0b071f66;touch-action:pan-y}
+.rain-window:after{content:"";position:absolute;inset:0;z-index:5;pointer-events:none;border-radius:inherit;box-shadow:inset 0 0 40px #0b091d80,inset 2px 0 #ffdfba22,inset -2px 0 #ffdfba22}
+.rain-window-moon{position:absolute;top:37px;right:19%;width:44px;height:44px;border-radius:50%;background:#e9dbd4;box-shadow:0 0 45px #ccd4f33b}
+.rain-distant-glow{position:absolute;inset:30% 0 0;background:radial-gradient(ellipse at 50% 100%,#bd69734a,transparent 70%);filter:blur(15px)}
+.rain-skyline{position:absolute;width:100%;height:42%;bottom:0;left:0;opacity:.72}
+.rain-message{position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:38px 24px 20px;gap:14px;text-shadow:0 2px 15px #0b0b1f}
+.rain-message .rain-small{font-size:.62rem;letter-spacing:.24em;color:#f1d6ca}
+.rain-message strong{font-size:clamp(1.65rem,5vw,2.7rem);font-weight:500;line-height:1.55;color:#fff1df}
+.rain-message p{font-size:clamp(.85rem,2vw,1rem);line-height:2;color:#f1d5dc;max-width:340px}
+.rain-message .rain-signature{font:italic 1.05rem 'Playfair Display',serif;color:#e9b8ba;margin-top:4px}
+.rain-fog{position:absolute;inset:0;width:100%;height:100%;z-index:3;touch-action:none;cursor:crosshair;transition:opacity 1.2s;opacity:1}
+.rain-window.is-clear .rain-fog{opacity:0;pointer-events:none}
+.rain-drops{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:4}
+.rain-drop{position:absolute;top:-25%;left:var(--x);width:1px;height:var(--length);background:linear-gradient(transparent,#eef0ff60);box-shadow:1px 0 #ffffff12;animation:rainSlide var(--time) linear infinite;animation-delay:var(--wait)}
+.rain-drop:after{content:"";position:absolute;bottom:0;left:-1px;width:3px;height:6px;border-radius:50%;background:#ecedff88;box-shadow:0 0 4px #d5dfff33}
+@keyframes rainSlide{to{transform:translate(-12px,530px)}}
+.rain-still-drop{position:absolute;width:5px;height:8px;border-radius:55% 45% 50% 50%;background:linear-gradient(130deg,#fff6,#b6bbda08 60%);border:1px solid #d7d6ed22;box-shadow:0 2px 4px #0e0d2322}
+.rain-wipe-prompt{position:absolute;z-index:4;left:16px;right:16px;top:46%;pointer-events:none;color:#f8e7e3;text-align:center;transition:opacity .5s;text-shadow:0 2px 8px #241e35}
+.rain-wipe-prompt span{display:block;font-size:1.7rem;margin-bottom:12px;animation:rainWipeHint 3s ease-in-out infinite}
+.rain-wipe-prompt p{font-size:.9rem;line-height:1.8}
+.rain-window.is-touched .rain-wipe-prompt{opacity:0}
+@keyframes rainWipeHint{0%,100%{transform:translateX(-14px) rotate(-9deg)}50%{transform:translateX(14px) rotate(9deg)}}
+.rain-sill{height:12px;margin:0 -8px;border-radius:3px;background:linear-gradient(#9a6b62,#47303b);box-shadow:0 8px 18px #11091766}
+.rain-controls{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px}
+.rain-control{border:1px solid #cd9aa04d;background:#ffffff07;color:#f0cbd0;border-radius:99px;padding:10px 17px;font:inherit;font-size:.75rem;transition:background .2s,transform .2s}
+.rain-control:hover{background:#b66c8b26;transform:translateY(-2px)}
+.rain-control:focus-visible{outline:2px solid #f7d4bb;outline-offset:4px}
+.rain-status{font-size:.72rem;color:#c59baa;line-height:1.8;min-height:27px;margin-top:12px}
+@media(max-width:650px){.rain-memory{margin-top:48px}.rain-window{height:385px;border-width:7px;border-radius:100px 100px 9px 9px}.rain-message{padding-inline:15px}.rain-intro{font-size:.8rem}.rain-message strong{font-size:1.7rem}.rain-message p{font-size:.9rem}.rain-wipe-prompt p{font-size:.82rem}}
+@media(prefers-reduced-motion:reduce){.rain-drop{animation:none!important;top:var(--rest)}.rain-wipe-prompt span{animation:none!important}.rain-fog{transition:none}}
+
 </style>
 </head>
 <body>
@@ -1274,6 +1311,28 @@
             <button class="farewell-replay" id="farewellReplay" type="button" hidden lang="bn">আরেকবার খুলে দেখি ↺</button>
             <p id="farewellStatus" class="sr-only" role="status" aria-live="polite"></p>
           </div>
+
+          <div class="rain-memory" aria-labelledby="rainMemoryTitle">
+            <p class="rain-eyebrow">A LITTLE RAIN. A LITTLE UNSAID.</p>
+            <h2 id="rainMemoryTitle" lang="bn">বৃষ্টিভেজা জানালা</h2>
+            <p class="rain-intro" lang="bn">বাইরে বৃষ্টি পড়ছে… কাচের ওপারে তোমার জন্য<br>ছোট্ট একটা কথা রেখে দিয়েছি।</p>
+            <div class="rain-window" id="rainWindow">
+              <div class="rain-distant-glow" aria-hidden="true"></div><div class="rain-window-moon" aria-hidden="true"></div>
+              <svg class="rain-skyline" viewBox="0 0 700 160" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160V75H40V104H65V49H109V90H140V38H165V70H205V102H236V60H280V94H315V45H350V80H395V30H439V95H470V62H520V88H555V41H596V97H630V66H675V102H700V160Z" fill="#151528"/><g fill="#d9ac8e" opacity=".55"><path d="M77 65h4v7h-4zm17 18h4v7h-4zm55-31h4v7h-4zm97 24h4v7h-4zm80-14h4v7h-4zm80-15h4v7h-4zm18 19h4v7h-4zm62 13h4v7h-4zm82-18h4v7h-4zm19 17h4v7h-4zm62 8h4v7h-4z"/></g></svg>
+              <div class="rain-message" id="rainMessage" lang="bn" aria-hidden="true">
+                <span class="rain-small">JUST CHECKING ON YOU</span>
+                <strong>বন্ধু, ভালো আছো তো?</strong>
+                <p>ব্যস্ততার ভিড়ে নিজের যত্ন নিও।<br>সব কথা হয়তো বলা হয় না,<br>তবু তোমার ভালো থাকাটা আজও<br>আমার কাছে অনেক কিছু।</p>
+                <span class="rain-signature">Miss you, bondhu…</span>
+              </div>
+              <canvas class="rain-fog" id="rainFog" aria-hidden="true"></canvas>
+              <div class="rain-drops" id="rainDrops" aria-hidden="true"></div>
+              <div class="rain-wipe-prompt" aria-hidden="true"><span>☝</span><p lang="bn">আঙুল বা মাউস দিয়ে কাচটা মুছে দেখো…</p></div>
+            </div>
+            <div class="rain-sill" aria-hidden="true"></div>
+            <div class="rain-controls"><button class="rain-control" id="rainReveal" type="button" aria-controls="rainMessage" aria-expanded="false" lang="bn">লেখাটা পুরো দেখি ↗</button><button class="rain-control" id="rainReset" type="button" lang="bn">আবার কুয়াশা জমুক ↺</button></div>
+            <p class="rain-status" id="rainStatus" role="status" aria-live="polite" lang="bn">কাচের কুয়াশা মুছলে কথাটা দেখা যাবে।</p>
+          </div>
           <p class="farewell-footnote">TWO SWINGS. ONE SKY. A FRIENDSHIP THAT STAYS.</p>
         </div>
       </section>
@@ -1592,6 +1651,75 @@
         document.getElementById('farewellDoorHint').textContent='কিছু না-বলা কথা আছে… দরজা দুটো খুলে দেখো।';
         door.focus();
       });
+    })();
+
+
+    // The mist is a local canvas: wiping reveals the real text beneath it.
+    (() => {
+      const frame=document.getElementById('rainWindow'),canvas=document.getElementById('rainFog'),ctx=canvas.getContext('2d'),message=document.getElementById('rainMessage'),reveal=document.getElementById('rainReveal'),status=document.getElementById('rainStatus');
+      let paths=[],activePath=null,activePointer=null,width=0,height=0,ratio=1;
+      const drops=document.getElementById('rainDrops');
+      for(let i=0;i<48;i++){
+        const drop=document.createElement('i');drop.className='rain-drop';
+        drop.style.cssText='--x:'+((i*31.7)%100)+'%;--length:'+(15+i%35)+'px;--time:'+(1.7+(i%7)*.45)+'s;--wait:-'+(i*.37)+'s;--rest:'+((i*17)%100)+'%';drops.appendChild(drop);
+      }
+      for(let i=0;i<36;i++){
+        const drop=document.createElement('i');drop.className='rain-still-drop';drop.style.cssText='left:'+((i*43.31)%100)+'%;top:'+((i*29.73)%100)+'%;opacity:'+(0.3+(i%5)*.13);drops.appendChild(drop);
+      }
+      function brush(point){
+        const x=point.x*width,y=point.y*height,r=Math.max(31,Math.min(49,width*.08));
+        ctx.globalCompositeOperation='destination-out';
+        const gradient=ctx.createRadialGradient(x,y,0,x,y,r);
+        gradient.addColorStop(0,'rgba(0,0,0,1)');gradient.addColorStop(.65,'rgba(0,0,0,.96)');gradient.addColorStop(1,'rgba(0,0,0,0)');
+        ctx.fillStyle=gradient;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+      }
+      function stroke(path){
+        path.forEach((point,i)=>{
+          if(i){const previous=path[i-1],distance=Math.hypot((point.x-previous.x)*width,(point.y-previous.y)*height),steps=Math.max(1,Math.ceil(distance/9));
+            for(let n=1;n<steps;n++)brush({x:previous.x+(point.x-previous.x)*n/steps,y:previous.y+(point.y-previous.y)*n/steps});
+          }brush(point);
+        });
+      }
+      function paint(){
+        const bounds=canvas.getBoundingClientRect();if(bounds.width<1||bounds.height<1)return;
+        width=bounds.width;height=bounds.height;ratio=Math.min(window.devicePixelRatio||1,2);
+        canvas.width=Math.round(width*ratio);canvas.height=Math.round(height*ratio);ctx.setTransform(ratio,0,0,ratio,0,0);
+        ctx.globalCompositeOperation='source-over';
+        const fog=ctx.createLinearGradient(0,0,width,height);fog.addColorStop(0,'#8e91a7');fog.addColorStop(.5,'#656779');fog.addColorStop(1,'#a28a9b');
+        ctx.fillStyle=fog;ctx.fillRect(0,0,width,height);
+        // Fine condensation gives the glass a soft, mottled surface.
+        for(let i=0;i<1000;i++){const x=(i*47.71)%width,y=(i*31.19)%height;ctx.fillStyle=i%2?'#ffffff09':'#282b4309';ctx.beginPath();ctx.arc(x,y,1+i%3,0,Math.PI*2);ctx.fill();}
+        paths.forEach(stroke);
+      }
+      function point(event){const bounds=canvas.getBoundingClientRect();return{x:Math.max(0,Math.min(1,(event.clientX-bounds.left)/bounds.width)),y:Math.max(0,Math.min(1,(event.clientY-bounds.top)/bounds.height))};}
+      function showMessage(){
+        frame.classList.add('is-clear','is-touched');message.setAttribute('aria-hidden','false');reveal.setAttribute('aria-expanded','true');
+        status.textContent='বন্ধু, ভালো আছো তো? ব্যস্ততার ভিড়ে নিজের যত্ন নিও।';activePath=null;activePointer=null;
+      }
+      canvas.addEventListener('pointerdown',event=>{
+        if(activePointer!==null||(event.pointerType==='mouse'&&event.button!==0))return;
+        event.preventDefault();if(!width)paint();activePointer=event.pointerId;canvas.setPointerCapture(event.pointerId);activePath=[point(event)];paths.push(activePath);brush(activePath[0]);
+        frame.classList.add('is-touched');message.setAttribute('aria-hidden','false');status.textContent='একটু একটু করে মুছে দেখো… তোমার জন্যই কথাগুলো।';
+      });
+      canvas.addEventListener('pointermove',event=>{
+        if(event.pointerId!==activePointer||!activePath)return;
+        const next=point(event),last=activePath[activePath.length-1];stroke([last,next]);activePath.push(next);
+      });
+      function finish(event){
+        if(event.pointerId!==activePointer)return;activePointer=null;activePath=null;
+        // A small sample measures actual erased glass, including overlapping strokes.
+        let erased=0,total=0;
+        for(let y=height*.14;y<height*.9;y+=height/16)for(let x=width*.12;x<width*.89;x+=width/18){total++;if(ctx.getImageData(Math.min(canvas.width-1,Math.floor(x*ratio)),Math.min(canvas.height-1,Math.floor(y*ratio)),1,1).data[3]<100)erased++;}
+        if(total&&erased/total>.5)showMessage();
+      }
+      canvas.addEventListener('pointerup',finish);canvas.addEventListener('pointercancel',finish);canvas.addEventListener('lostpointercapture',finish);
+      reveal.addEventListener('click',showMessage);
+      document.getElementById('rainReset').addEventListener('click',()=>{
+        activePointer=null;activePath=null;paths=[];frame.classList.remove('is-clear','is-touched');message.setAttribute('aria-hidden','true');reveal.setAttribute('aria-expanded','false');
+        status.textContent='আবার কুয়াশা জমেছে… চাইলে আবার মুছে দেখো।';paint();
+      });
+      if(!ctx){canvas.hidden=true;showMessage();return;}
+      new ResizeObserver(paint).observe(frame);
     })();
 
   </script>
