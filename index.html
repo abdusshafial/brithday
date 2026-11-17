@@ -877,6 +877,70 @@
 
 .constellation-howto{display:flex;align-items:center;justify-content:center;gap:11px;margin:15px auto 10px;color:#ead4d8;font-size:.72rem}.constellation-howto>span{display:flex;align-items:center;gap:7px}.constellation-howto b{display:grid;place-items:center;width:24px;height:24px;border:1px solid #e4c57c;border-radius:50%;color:#f0d293;font-size:.59rem}.constellation-howto>i{color:#d8b875;font-style:normal}.constellation-connect-button{display:flex;align-items:center;justify-content:center;gap:11px;min-height:48px;margin:0 auto;padding:11px 21px;border:1px solid #f1d18d;border-radius:30px;background:linear-gradient(110deg,#b84b64,#772542 54%,#a97943);color:#fff1dc;font-weight:800;box-shadow:0 8px 22px #14081166,inset 0 1px #fff4;cursor:pointer;transition:transform .2s,filter .2s}.constellation-connect-button:hover{transform:translateY(-2px);filter:brightness(1.12)}.constellation-connect-button:disabled{opacity:.7;cursor:default;transform:none}.constellation-connect-button span{color:#f4d590}.constellation-alt-hint{text-align:center;margin:8px auto 0;color:#c9adb8;font-size:.66rem}@media(max-width:650px){.constellation-howto{gap:7px;font-size:.59rem}.constellation-howto>span{gap:5px}.constellation-howto b{width:21px;height:21px}.constellation-connect-button{width:min(100%,310px);min-height:50px;font-size:.82rem}.constellation-alt-hint{font-size:.62rem}}
 
+
+/* The last page: two friends beneath the same sky. */
+.farewell-view{padding-top:12px!important}
+.farewell-view .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.farewell-night{position:relative;isolation:isolate;overflow:hidden;min-height:850px;border:1px solid #d69b9140;border-radius:32px;background:radial-gradient(ellipse at 50% 0,#79283e88,transparent 52%),linear-gradient(180deg,#250c1b,#440f28 60%,#210c1a);box-shadow:0 30px 90px #16061188;text-align:center;padding:62px 22px 36px}
+.farewell-night:before,.farewell-night:after{content:"";position:absolute;z-index:-1;left:-15%;right:-15%;bottom:-90px;height:210px;border-radius:50%;background:#1e0b1a;box-shadow:0 -1px #e6ac8b22}
+.farewell-night:after{bottom:-145px;left:-40%;background:#130913;transform:rotate(7deg)}
+.farewell-stars{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.farewell-star{position:absolute;width:var(--size);height:var(--size);border-radius:50%;background:#fff1d8;box-shadow:0 0 7px #ffe6b9;animation:farewellTwinkle var(--speed) ease-in-out infinite alternate;animation-delay:var(--delay)}
+@keyframes farewellTwinkle{from{opacity:.15;transform:scale(.6)}to{opacity:.95;transform:scale(1.15)}}
+.farewell-moon{position:relative;margin:0 auto 28px;width:76px;height:76px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8df,#f5d2ac 65%,#c98d82);box-shadow:0 0 32px #ffd8b44d,0 0 95px #ffc99d26;animation:farewellMoon 7s ease-in-out infinite}
+.farewell-moon:before{content:"";position:absolute;inset:12px 15px 30px 39px;border-radius:50%;background:#af77721a;box-shadow:-20px 24px 0 3px #a4767616,4px 30px 0 -3px #a4767622}
+@keyframes farewellMoon{50%{box-shadow:0 0 50px #ffd8b470,0 0 115px #ffc99d33}}
+.farewell-kicker{color:#ddb4a8;font-size:.66rem;letter-spacing:.24em;text-transform:uppercase}
+.farewell-night h1{font:600 clamp(2.1rem,4.8vw,4rem)/1.2 'Playfair Display',serif;color:#ffe5ce;margin:14px 0 12px;text-shadow:0 5px 26px #e98a9d22}
+.farewell-subtitle{color:#cba5ae;font-size:.88rem;letter-spacing:.04em}
+.farewell-scene{position:relative;display:grid;grid-template-columns:minmax(110px,1fr) minmax(230px,1.65fr) minmax(110px,1fr);align-items:start;max-width:1050px;margin:28px auto 0;min-height:350px;gap:8px}
+.farewell-swing{width:100%;max-width:230px;margin:auto;overflow:visible;filter:drop-shadow(0 12px 12px #10061166)}
+.farewell-swing .swing-person{transform-origin:110px 25px;animation:farewellSwing 5.5s ease-in-out infinite}
+.farewell-swing.girl .swing-person{animation-delay:-2.5s;animation-duration:6.2s}
+@keyframes farewellSwing{0%,100%{transform:rotate(7deg)}50%{transform:rotate(-7deg)}}
+.farewell-letter{padding:26px 2px 10px;color:#f4dbd9;font-size:clamp(.95rem,1.35vw,1.12rem);line-height:2.1}
+.farewell-letter p{margin-bottom:19px}
+.farewell-letter .farewell-last-line{color:#edbdad;font-size:.95em}
+.farewell-person-name{font:10px 'Manrope',sans-serif;letter-spacing:2px;fill:#d4a7ad}
+.farewell-shooting-star{position:absolute;width:95px;height:1px;background:linear-gradient(90deg,transparent,#fff0d8);top:13%;left:-20%;transform:rotate(22deg);opacity:0;animation:farewellShooting 11s linear infinite;pointer-events:none}
+@keyframes farewellShooting{0%,65%,100%{opacity:0;translate:0 0}68%{opacity:.8}78%{opacity:0;translate:1000px 260px}}
+.farewell-doors-area{position:relative;margin:5px auto 0;max-width:480px}
+.farewell-door-hint{font-size:.77rem;color:#ce9ca9;margin-bottom:17px;letter-spacing:.03em}
+.farewell-doorway{position:relative;display:block;width:228px;height:206px;perspective:900px;margin:auto;border:1px solid #d39d8055;border-radius:114px 114px 5px 5px;background:radial-gradient(ellipse at 50% 45%,#e4a58733,#240d1b 75%);box-shadow:0 0 55px #e7ac8010;padding:0;color:inherit}
+.farewell-doorway:focus-visible,.farewell-replay:focus-visible,.farewell-next:focus-visible{outline:2px solid #ffe0bb;outline-offset:6px}
+.farewell-door{position:absolute;top:0;bottom:0;width:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(100deg,#401024,#77293d,#491227);border:1px solid #c98d7166;box-shadow:inset 0 0 0 7px #2b0a1c,inset 0 0 0 8px #bc816436;backface-visibility:hidden;transition:transform 1.8s cubic-bezier(.22,.7,.18,1),filter 1.8s;z-index:2}
+.farewell-door.left{left:0;border-radius:114px 0 0 4px;transform-origin:left}
+.farewell-door.right{right:0;border-radius:0 114px 4px 0;transform-origin:right}
+.farewell-door span{font-size:1.8rem;filter:grayscale(.35);margin-top:30px}
+.farewell-door:after{content:"";position:absolute;top:64%;width:5px;height:20px;border-radius:4px;background:#e4b58d;box-shadow:0 0 10px #e4b58d33}
+.farewell-door.left:after{right:13px}.farewell-door.right:after{left:13px}
+.farewell-doorway.is-open .left{transform:rotateY(-108deg);filter:brightness(.7)}
+.farewell-doorway.is-open .right{transform:rotateY(108deg);filter:brightness(.7)}
+.farewell-secret{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:18px;opacity:0;transform:translateY(12px);transition:opacity 1.5s .6s,transform 1.5s .6s}
+.is-open .farewell-secret{opacity:1;transform:none}
+.farewell-secret strong{font:600 1.85rem/1.2 'Playfair Display',serif;color:#ffe0bf;text-shadow:0 0 28px #ffac9d66}
+.farewell-secret small{font-size:.73rem;line-height:1.7;color:#e2bbc2}
+.farewell-secret-icon{font-size:1.45rem}
+.farewell-particles{position:absolute;inset:-80px -30px 0;pointer-events:none;z-index:4;overflow:visible}
+.farewell-tear{position:absolute;left:50%;top:75%;width:9px;height:14px;border-radius:70% 30% 65% 35%;background:linear-gradient(135deg,#fbe9e5,#cf9bb5aa);box-shadow:0 0 12px #e4aac477;opacity:0;animation:farewellTear var(--duration) ease-out forwards;animation-delay:var(--delay)}
+@keyframes farewellTear{10%{opacity:.85}100%{opacity:0;transform:translate(var(--tx),var(--ty)) rotate(160deg) scale(.2)}}
+.farewell-replay{margin-top:22px;border:0;background:transparent;color:#deb6b7;font-size:.78rem;padding:9px 18px;text-decoration:underline;text-underline-offset:5px}
+.farewell-replay[hidden]{display:none}
+.farewell-footnote{color:#bd8a9c;font-size:.7rem;letter-spacing:.13em;margin-top:28px}
+.farewell-next{display:flex;align-items:center;justify-content:center;gap:12px;width:fit-content;max-width:100%;margin:38px auto 0;padding:15px 24px;border-radius:99px;border:1px solid #d99da05c;background:linear-gradient(110deg,#641d39,#3a142b);color:#ffe2d6;font:inherit;font-size:.9rem}
+.farewell-night *{animation-play-state:paused!important}.farewell-view:not([hidden]) .farewell-night *{animation-play-state:running!important}
+@media(min-width:651px){.side-nav{gap:5px}.side-link{padding-block:10px}}
+@media(max-width:850px){.farewell-scene{grid-template-columns:100px minmax(0,1fr) 100px}.farewell-letter{font-size:.94rem;line-height:1.95}.farewell-night{padding-inline:14px}}
+@media(max-width:650px){
+ .side-nav{grid-template-columns:repeat(9,minmax(0,1fr))!important}.side-link{font-size:.46rem!important;padding-inline:0!important}
+ .farewell-night{border-radius:25px;padding:35px 14px 28px;min-height:0}.farewell-moon{width:61px;height:61px;margin-bottom:24px}
+ .farewell-scene{grid-template-columns:1fr 1fr;gap:0;margin-top:10px;min-height:0}
+ .farewell-letter{grid-column:1/-1;grid-row:1;padding:24px 6px 0;font-size:.98rem;line-height:2.05}
+ .farewell-swing{grid-row:2;width:140px;margin-top:-10px;max-width:100%;height:220px}.farewell-swing.girl{grid-column:2}
+ .farewell-doors-area{margin-top:6px}.farewell-doorway{width:208px;height:190px}.farewell-footnote{letter-spacing:.06em;font-size:.64rem}
+}
+@media(prefers-reduced-motion:reduce){.farewell-night *{animation:none!important}.farewell-star{opacity:.65}.farewell-door,.farewell-secret{transition:none}.farewell-tear{display:none}}
+
 </style>
 </head>
 <body>
@@ -902,6 +966,7 @@
         <button class="side-link" type="button" data-page="capsule" data-mobile-label="Time"><span class="side-icon">&#9203;</span><span>Time Capsule</span></button>
         <button class="side-link" type="button" data-page="hearts" data-mobile-label="Hearts"><span class="side-icon">&#10084;</span><span>Catch Hearts</span></button>
         <button class="side-link" type="button" data-page="surprise" data-mobile-label="Surprise"><span class="side-icon">&#127873;</span><span>Surprise</span></button>
+        <button class="side-link" type="button" data-page="farewell" data-mobile-label="Miss You"><span class="side-icon">&#128532;</span><span>Miss You</span></button>
       </nav>
       <div class="side-bottom"><div class="side-note">A friendship full of little moments and a lifetime of love.</div><button class="music" id="musicBtnSide" type="button" aria-label="Toggle birthday song">&#9835; Birthday song: Off</button></div>
     </aside>
@@ -1162,6 +1227,55 @@
           <button class="plan-option buffet-option" id="buffetOption" type="button" onclick="chooseBuffet()"><span class="buffet-prompt"><span class="plan-emoji">&#127873;</span><strong>Your Buffet Surprise</strong><span class="plan-description">Tied with love and a little flower for you.</span><span class="plan-action">Tap the flower to open</span></span><span class="gift-lid" aria-hidden="true"></span><span class="gift-ribbon" aria-hidden="true"></span><span class="gift-bow" aria-hidden="true"><i></i><i></i><b></b></span><span class="gift-flower-seal" aria-hidden="true">&#127800;</span><span class="gift-inside"><span class="gift-burst" aria-hidden="true">&#10022; &#10084; &#10022;</span><strong>Happy Birthday, Borsha!</strong><span>After your final exam is over, InshaAllah, we will celebrate with a delicious buffet together!</span></span></button>
         </div>
         <div class="plan-response" id="planResponse" role="status" aria-live="polite"></div>
+        <button class="farewell-next" type="button" onclick="goToUniversePlanet('farewell')">শেষে, কিছু মনের কথা… <span aria-hidden="true">☾ →</span></button>
+      </section>
+
+      <section class="page farewell-view" data-view="farewell" hidden aria-labelledby="farewellTitle">
+        <div class="farewell-night">
+          <div class="farewell-stars" id="farewellStars" aria-hidden="true"></div><span class="farewell-shooting-star" aria-hidden="true"></span>
+          <div class="farewell-moon" aria-hidden="true"></div>
+          <p class="farewell-kicker">Same sky. Different busy lives.</p>
+          <h1 id="farewellTitle" lang="bn">কিছু কথা রয়ে যায়…</h1>
+          <p class="farewell-subtitle" lang="bn">দূরত্ব বাড়ে, বন্ধুত্বের মায়া তো কমে না।</p>
+          <div class="farewell-scene">
+            <svg class="farewell-swing boy" viewBox="0 0 220 350" role="img" aria-label="A boy gently swinging beneath the stars">
+<path d="M10 26 Q110 13 210 26" stroke="#b47d72" stroke-width="5" fill="none"/><path d="M14 26 L4 340 M206 26 L216 340" stroke="#956469" stroke-width="4" fill="none" opacity=".45"/>
+<g class="swing-person"><path d="M65 25V255 M155 25V255" stroke="#dbad91" stroke-width="2" fill="none"/>
+<path d="M94 192 Q110 187 126 192 L135 249 H86Z" fill="#737a99"/><path d="M95 250 L92 282 M122 250 L130 281" stroke="#30243a" stroke-width="10" stroke-linecap="round"/><path d="M80 285 H94 M128 284 H142" stroke="#1b1222" stroke-width="8" stroke-linecap="round"/>
+<path d="M94 201 L66 227 L65 214 M127 201 L154 227 L155 213" stroke="#d8a49c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="110" cy="175" rx="20" ry="23" fill="#dca99e"/>
+<path d="M89 172 Q81 148 105 148 Q132 141 132 169 L124 170 L119 158 Q104 170 89 172Z" fill="#211323"/>
+<path d="M103 180h1 M117 180h1" stroke="#5c3542" stroke-width="2" stroke-linecap="round"/>
+<rect x="58" y="250" width="104" height="8" rx="4" fill="#a77369"/><path d="M60 252H160" stroke="#e1b294" opacity=".6"/>
+</g><ellipse cx="110" cy="328" rx="59" ry="6" fill="#100713" opacity=".4"/><text x="110" y="349" text-anchor="middle" class="farewell-person-name">SHAFIAL</text></svg>
+            <div class="farewell-letter" lang="bn">
+              <p>আগের মতো আর কথা হয় না…<br>তুমি তোমার জীবন নিয়ে ব্যস্ত,<br>একইভাবে আমিও।</p>
+              <p>চাইলেও আর সেই রমজান মাসের মতো<br>সারা রাত জেগে কথা বলতে পারি না।<br>দিন যাচ্ছে, সময়ও পাল্টে যাচ্ছে…</p>
+              <p class="farewell-last-line">তবু কোনো নীরব রাতে খুব মনে পড়ে—<br>সেই কথাগুলো, সেই হাসিগুলো, আর তোমাকে।<br>কথা কম হলেও, তুমি আজও<br>আমার সেই আগের বন্ধু।</p>
+            </div>
+            <svg class="farewell-swing girl" viewBox="0 0 220 350" role="img" aria-label="A girl gently swinging beneath the stars">
+<path d="M10 26 Q110 13 210 26" stroke="#b47d72" stroke-width="5" fill="none"/><path d="M14 26 L4 340 M206 26 L216 340" stroke="#956469" stroke-width="4" fill="none" opacity=".45"/>
+<g class="swing-person"><path d="M65 25V255 M155 25V255" stroke="#dbad91" stroke-width="2" fill="none"/>
+<path d="M89 161 Q75 188 82 218 L139 218 Q148 183 128 161Z" fill="#21111f"/><path d="M94 195 Q110 186 127 195 L144 253 H76Z" fill="#b57183"/><path d="M98 252 L97 283 M120 252 L125 283" stroke="#d8a49c" stroke-width="8" stroke-linecap="round"/><path d="M86 285 H99 M121 285 H134" stroke="#24111f" stroke-width="7" stroke-linecap="round"/>
+<path d="M94 201 L66 227 L65 214 M127 201 L154 227 L155 213" stroke="#d8a49c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<ellipse cx="110" cy="175" rx="20" ry="23" fill="#dca99e"/>
+<path d="M88 178 Q79 144 109 147 Q141 147 133 183 L124 165 Q106 172 96 160 L94 185Z" fill="#241220"/><path d="M130 170 Q147 202 134 231" stroke="#241220" stroke-width="9" fill="none"/>
+<path d="M103 180h1 M117 180h1" stroke="#5c3542" stroke-width="2" stroke-linecap="round"/>
+<rect x="58" y="250" width="104" height="8" rx="4" fill="#a77369"/><path d="M60 252H160" stroke="#e1b294" opacity=".6"/>
+</g><ellipse cx="110" cy="328" rx="59" ry="6" fill="#100713" opacity=".4"/><text x="110" y="349" text-anchor="middle" class="farewell-person-name">BORSHA</text></svg>
+          </div>
+          <div class="farewell-doors-area">
+            <p class="farewell-door-hint" id="farewellDoorHint" lang="bn">কিছু না-বলা কথা আছে… দরজা দুটো খুলে দেখো।</p>
+            <button class="farewell-doorway" id="farewellDoorway" type="button" aria-label="Open the two doors for a message" aria-expanded="false" aria-controls="farewellSecret">
+              <span class="farewell-secret" id="farewellSecret" aria-hidden="true"><span class="farewell-secret-icon">🥺</span><strong>Miss you<br>bondhu…</strong><small lang="bn">আবার কোনো এক রাতে,<br>অনেক কথা হবে… আগের মতো।</small></span>
+              <span class="farewell-door left" aria-hidden="true"><span>😔</span></span><span class="farewell-door right" aria-hidden="true"><span>😢</span></span>
+            </button>
+            <div class="farewell-particles" id="farewellParticles" aria-hidden="true"></div>
+            <button class="farewell-replay" id="farewellReplay" type="button" hidden lang="bn">আরেকবার খুলে দেখি ↺</button>
+            <p id="farewellStatus" class="sr-only" role="status" aria-live="polite"></p>
+          </div>
+          <p class="farewell-footnote">TWO SWINGS. ONE SKY. A FRIENDSHIP THAT STAYS.</p>
+        </div>
       </section>
       <footer>Made with <span>&#10084;</span> and a little birthday magic &#8226; <span id="year"></span></footer>
       <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -1447,6 +1561,39 @@
     function answerYes(){confetti(160);showToast('Yay! Our adventure starts now! \uD83D\uDC9C');}
     function answerNo(){showToast('Are you sure? Think about all the fun!');const button=document.getElementById('noBtn');button.textContent='Maybe? \u2728';}
     function showToast(message){const toast=document.getElementById('toast');toast.textContent=message;toast.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('show'),3000);}
+
+    // A quiet ending, with finite particles and keyboard-accessible doors.
+    (() => {
+      const stars=document.getElementById('farewellStars');
+      for(let i=0;i<100;i++){
+        const star=document.createElement('i');star.className='farewell-star';
+        star.style.cssText='left:'+((i*37.73)%100)+'%;top:'+((i*19.31)%94)+'%;--size:'+(i%4===0?2.5:1.3)+'px;--speed:'+(2+i%5)+'s;--delay:-'+(i%9)+'s';
+        stars.appendChild(star);
+      }
+      const door=document.getElementById('farewellDoorway'),secret=document.getElementById('farewellSecret'),replay=document.getElementById('farewellReplay'),particles=document.getElementById('farewellParticles');
+      let resetTimer;
+      door.addEventListener('click',()=>{
+        if(door.classList.contains('is-open'))return;
+        clearTimeout(resetTimer);door.classList.add('is-open');door.setAttribute('aria-expanded','true');door.setAttribute('aria-label','The doors are open: Miss you bondhu');
+        secret.setAttribute('aria-hidden','false');replay.hidden=false;
+        document.getElementById('farewellDoorHint').textContent='কথা কমে যায়… মায়া থেকে যায়।';
+        document.getElementById('farewellStatus').textContent='Miss you bondhu… আবার কোনো এক রাতে, অনেক কথা হবে… আগের মতো।';
+        if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+          for(let i=0;i<34;i++){
+            const tear=document.createElement('i');tear.className='farewell-tear';
+            tear.style.cssText='--tx:'+(-180+Math.random()*360)+'px;--ty:'+(-120-Math.random()*210)+'px;--duration:'+(2+Math.random()*2)+'s;--delay:'+(i*.035)+'s';
+            particles.appendChild(tear);setTimeout(()=>tear.remove(),5500);
+          }
+        }
+      });
+      replay.addEventListener('click',()=>{
+        door.classList.remove('is-open');door.setAttribute('aria-expanded','false');door.setAttribute('aria-label','Open the two doors for a message');secret.setAttribute('aria-hidden','true');particles.replaceChildren();replay.hidden=true;
+        document.getElementById('farewellStatus').textContent='';
+        document.getElementById('farewellDoorHint').textContent='কিছু না-বলা কথা আছে… দরজা দুটো খুলে দেখো।';
+        door.focus();
+      });
+    })();
+
   </script>
 </body>
 </html>
