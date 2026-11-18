@@ -1138,6 +1138,98 @@
     .future-memory-invite h2 { margin: 0 0 .35rem; font-size: 1.2rem; color: inherit; }
     .future-memory-invite p { margin: 0; }
 
+    .birthday-news {
+      max-width: 48rem;
+      margin: 1.75rem auto 2.5rem;
+      border: 1px solid #e9ae8770;
+      border-radius: 1.25rem;
+      background: #35162a;
+      color: #fff0e8;
+      box-shadow: 0 16px 36px #210b2055;
+    }
+
+    .birthday-news-toggle {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem 1rem;
+      padding: .85rem clamp(1rem, 4vw, 1.5rem);
+      color: #fff1ea;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .birthday-news-toggle::-webkit-details-marker { display: none; }
+    .birthday-news-toggle:focus-visible,
+    .birthday-news-options button:focus-visible { outline: 3px solid #ffdb9f; outline-offset: 3px; }
+
+    .birthday-news-name { font-size: 1.05rem; font-weight: 750; }
+    .birthday-news-label { color: #ffd2a8; font-size: .9rem; font-weight: 750; }
+    .birthday-news-close,
+    .birthday-news[open] .birthday-news-open { display: none; }
+    .birthday-news[open] .birthday-news-close { display: inline; }
+
+    .birthday-news-bulletin {
+      overflow: hidden;
+      border-top: 1px solid #e9ae8759;
+      border-radius: 0 0 calc(1.25rem - 1px) calc(1.25rem - 1px);
+      background: radial-gradient(ellipse at top right, #783047, #461b32 65%);
+    }
+
+    .birthday-news-story { padding: clamp(1rem, 4vw, 1.5rem); }
+    .birthday-news-tag {
+      display: inline-block;
+      padding: .25rem .65rem;
+      border-radius: .3rem;
+      background: #ffd5ae;
+      color: #4e1530;
+      font-weight: 800;
+    }
+
+    .birthday-news-story h2 {
+      margin: .65rem 0 .4rem;
+      color: #fff1ea;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      line-height: 1.4;
+    }
+
+    .birthday-news-story p { margin: 0; color: #f5dce3; line-height: 1.65; }
+    .birthday-news-options { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+    .birthday-news-options button {
+      padding: .55rem .9rem;
+      min-height: 44px;
+      border: 1px solid #ffcdab;
+      border-radius: 4rem;
+      background: #4f2037;
+      color: #fff1ea;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .birthday-news-options button:hover,
+    .birthday-news-options button[aria-pressed="true"] { background: #ffd5ae; color: #4e1530; }
+
+    .birthday-news-ticker {
+      display: flex;
+      align-items: baseline;
+      gap: .75rem;
+      padding: .7rem clamp(1rem, 4vw, 1.5rem);
+      background: #772843;
+      color: #fff7f2;
+      font-size: .92rem;
+      line-height: 1.55;
+    }
+
+    .birthday-news-ticker strong { flex-shrink: 0; color: #ffdb9f; }
+    .birthday-news[open] .birthday-news-story,
+    .birthday-news[open] .birthday-news-ticker span { animation: birthdayBulletinIn .45s ease-out both; }
+
+    @keyframes birthdayBulletinIn {
+      from { opacity: 0; transform: translateY(.45rem); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
 </style>
 </head>
 <body>
@@ -1180,6 +1272,31 @@
           </div>
           <div class="home-portrait-wrap"><div class="portrait-orbit"></div><div class="home-portrait"><img src="assets/memories/birthday-queen.jpeg" alt="Borsha at her celebration, wearing a yellow sari" decoding="async"><div class="portrait-shine"></div></div><div class="portrait-badge"><span class="badge-icon">&#10024;</span><div><strong>Since 2021</strong><small>FRIENDS & FOREVER</small></div></div><div class="portrait-sticker">Birthday<br>queen <span>&#10022;</span></div></div>
         </div>
+
+        <details class="birthday-news" id="birthdayNews" lang="bn">
+          <summary class="birthday-news-toggle">
+            <span class="birthday-news-name">বর্ষার জন্মদিনের ব্রেকিং নিউজ</span>
+            <span class="birthday-news-label">
+              <span class="birthday-news-open">খবর দেখো ▸</span>
+              <span class="birthday-news-close">খবর বন্ধ করো ▴</span>
+            </span>
+          </summary>
+          <div class="birthday-news-bulletin">
+            <div class="birthday-news-story">
+              <span class="birthday-news-tag">ব্রেকিং নিউজ</span>
+              <h2>বর্ষাকে বিরক্ত করার অনুমতি চাইলেন বেস্ট ফ্রেন্ড</h2>
+              <p>জন্মদিনে বর্ষাকে একটু বেশি বিরক্ত করার জন্য বিশেষ আবেদন জমা পড়েছে। বর্ষা এখনো আবেদনটি <em lang="en">seen</em> করে রেখেছেন। এখন সিদ্ধান্ত তাঁর হাতে।</p>
+              <div class="birthday-news-options">
+                <button type="button" aria-pressed="false" data-headline="বর্ষা অনুমতি দিয়েছেন! বেস্ট ফ্রেন্ড জানিয়েছেন, প্রথম মেসেজটা আর পাঁচ মিনিটের মধ্যেই আসছে।">অনুমতি দিলাম</button>
+                <button type="button" aria-pressed="false" data-headline="আবেদন আটকে গেল! এক টুকরো কেক জমা দেওয়ার পরেই বর্ষা সিদ্ধান্ত জানাবেন।">আগে কেক দাও</button>
+              </div>
+            </div>
+            <div class="birthday-news-ticker">
+              <strong>সর্বশেষ</strong>
+              <span id="birthdayNewsHeadline" role="status">সেই ২০২১ থেকে খবর একটাই। দুজনের গল্প এখনো শেষ হয় না।</span>
+            </div>
+          </div>
+        </details>
 
         <section class="universe-section" aria-labelledby="universeTitle">
           <div class="universe-heading"><span class="universe-eyebrow">&#10022; A GALAXY MADE OF US &#10022;</span><h2 id="universeTitle">Borsha's Universe</h2><p>Five little worlds, all orbiting around one very special person.</p></div>
@@ -2029,6 +2146,17 @@
         status.textContent='তিনটে বেলুন, একটু হালকা হয়ে যাওয়ার গল্প।';balloons[0].focus({preventScroll:true});
       });
     })();
+
+    const birthdayNews = document.getElementById('birthdayNews');
+    const birthdayNewsHeadline = document.getElementById('birthdayNewsHeadline');
+    const birthdayNewsOptions = birthdayNews.querySelectorAll('.birthday-news-options button');
+    birthdayNewsOptions.forEach(button => {
+      button.addEventListener('click', () => {
+        birthdayNewsOptions.forEach(option => option.setAttribute('aria-pressed', String(option === button)));
+        birthdayNewsHeadline.textContent = button.dataset.headline;
+      });
+    });
+
 
   </script>
 </body>
