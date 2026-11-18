@@ -1080,6 +1080,64 @@
 @media(max-width:650px){.lastwish-ending{margin-top:38px;border-radius:90px 90px 22px 22px;padding:153px 23px 78px}.lastwish-moon{top:42px;width:61px;height:61px;left:calc(50% - 30px)}.lastwish-grove{width:33%;left:-38px;opacity:.48;height:78%}.lastwish-grove-right{left:auto;right:-40px;width:28%;height:55%;opacity:.35}.lastwish-river{width:47%;height:48%;opacity:.45}.lastwish-copy p{font-size:.94rem;line-height:2.05;margin-bottom:22px}.lastwish-eyebrow{font-size:.53rem;letter-spacing:.14em}}
 @media(prefers-reduced-motion:reduce){.lastwish-stars,.lastwish-bamboo,.lastwish-river-shimmer,.lastwish-wind i,.lastwish-leaf{animation:none!important}}
 
+    .future-memory {
+      width: min(100%, 21rem);
+      margin: 2.75rem auto 1.25rem;
+      text-align: center;
+    }
+
+    .future-memory-frame {
+      display: block;
+      padding: .75rem .75rem 1rem;
+      border-radius: .25rem;
+      background: #fff8ed;
+      color: #54293c;
+      box-shadow: 0 12px 28px #200b2050;
+      cursor: pointer;
+      list-style: none;
+    }
+
+    .future-memory-frame::-webkit-details-marker { display: none; }
+    .future-memory-frame:focus-visible { outline: 3px solid #eec781; outline-offset: 5px; }
+
+    .future-memory-photo {
+      display: block;
+      aspect-ratio: 1;
+      background: radial-gradient(ellipse at top left, #f2e0da, #dfbdc8);
+      box-shadow: inset 0 0 12px #54293c23;
+    }
+
+    .future-memory-caption {
+      display: block;
+      margin-top: .85rem;
+      font-size: 1.08rem;
+      font-weight: 700;
+    }
+
+    .future-memory-hint {
+      display: block;
+      margin-top: .25rem;
+      color: #795365;
+      font-size: .84rem;
+    }
+
+    .future-memory-close,
+    .future-memory[open] .future-memory-open { display: none; }
+    .future-memory[open] .future-memory-close { display: block; }
+
+    .future-memory-invite {
+      margin-top: .75rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #dbc09a;
+      border-radius: .65rem;
+      background: #fff2df;
+      color: #54293c;
+      line-height: 1.65;
+    }
+
+    .future-memory-invite h2 { margin: 0 0 .35rem; font-size: 1.2rem; color: inherit; }
+    .future-memory-invite p { margin: 0; }
+
 </style>
 </head>
 <body>
@@ -1211,6 +1269,18 @@
           <aside class="more-design-card"><span class="loader-orbit" aria-hidden="true"><i></i><i></i><i></i></span><strong>More designs<br>loading...</strong><span class="loading-dots" aria-hidden="true"><i></i><i></i><i></i></span></aside>
         </div>
         <div class="birthday-joke is-locked" id="birthdayNote"><span class="joke-sparkle">&#10024;</span><span class="joke-gift-bow" aria-hidden="true"></span><button class="love-lock" type="button" onclick="openBirthdayNote()" aria-label="Unlock the birthday message with love"><span class="love-lock-heart" aria-hidden="true">&#10084;<i>&#128274;</i></span><span>Unlock with love</span></button><p>Next birthday, you will celebrate with your husband&#8230; and I will still show up as your official cake-tasting bestie! <span>&#127856; &#128518;</span></p><span class="joke-sparkle">&#10024;</span></div>
+        <details class="future-memory" lang="bn">
+          <summary class="future-memory-frame">
+            <span class="future-memory-photo" aria-hidden="true"></span>
+            <span class="future-memory-caption">পরীক্ষা শেষের পর, ইনশাআল্লাহ।</span>
+            <span class="future-memory-hint future-memory-open">দাওয়াতটা দেখতে ট্যাপ করো</span>
+            <span class="future-memory-hint future-memory-close">দাওয়াতটা বন্ধ করো</span>
+          </summary>
+          <div class="future-memory-invite">
+            <h2>বর্ষা, তোমার জন্য বুফের দাওয়াত!</h2>
+            <p>ফাইনাল পরীক্ষা শেষ হলে ইনশাআল্লাহ আমরা একসঙ্গে বুফে খেতে যাব। সেদিন এই ফ্রেমের জন্য আমাদের একটা ছবি তুলব।</p>
+          </div>
+        </details>
       </section>
       <section class="page" data-view="wish" hidden>
         <div class="page-heading"><div class="kicker">A little birthday note</div><h1>A Wish</h1><p>A letter for the friend who makes life more beautiful.</p></div>
