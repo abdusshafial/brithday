@@ -1136,6 +1136,40 @@
   .lastwish-ending.is-celebrating .lastwish-greeting{animation:none}
 }
 
+.lastwish-turn{max-width:420px;margin:18px auto 0}
+.lastwish-turn summary{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:44px;
+  padding:8px 19px;border:1px solid #e9cc8777;border-radius:999px;
+  background:#422f35;color:#ffe5b8;font-size:1rem;cursor:pointer;list-style:none;
+}
+.lastwish-turn summary::-webkit-details-marker{display:none}
+.lastwish-turn summary::after{
+  content:"";width:7px;height:7px;margin-top:-3px;
+  border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg);
+}
+.lastwish-turn[open] summary::after{margin-top:3px;transform:rotate(225deg)}
+.lastwish-turn summary:hover,.lastwish-reply button:hover{background:#543941}
+.lastwish-reply{
+  margin:14px auto 0;padding:clamp(14px,4vw,22px);text-align:left;
+  border:1px solid #e9cc8740;border-radius:18px;background:#181d29f2;
+}
+.lastwish-reply label{display:block;margin-bottom:8px;color:#ffe5b8;font-size:1.1rem;line-height:1.65}
+.lastwish-reply textarea{
+  display:block;width:100%;min-height:96px;padding:10px 12px;resize:vertical;
+  border:1px solid #e9cc8766;border-radius:10px;background:#101721;
+  color:#f7ead7;font:inherit;line-height:1.55;
+}
+.lastwish-reply button{
+  margin-top:12px;min-height:44px;padding:8px 14px;border:1px solid #e9cc8777;
+  border-radius:10px;background:#422f35;color:#ffe5b8;font-size:.92rem;
+}
+.lastwish-turn :focus-visible{outline:2px solid #ffe0a4;outline-offset:3px}
+.lastwish-copy .lastwish-reply-help,
+.lastwish-copy .lastwish-reply-status{color:#d8ccc2;font-size:.9rem;line-height:1.6}
+.lastwish-copy .lastwish-reply-help{margin:0 0 12px}
+.lastwish-copy .lastwish-reply-status{margin:0}
+.lastwish-copy .lastwish-reply-status:not(:empty){margin-top:10px}
+
     .future-memory {
       width: min(100%, 21rem);
       margin: 2.75rem auto 1.25rem;
@@ -1756,6 +1790,16 @@
               <div class="lastwish-divider" aria-hidden="true"></div>
               <p class="lastwish-signature"><span class="lastwish-greeting">আবারও, মন থেকে—শুভ জন্মদিন।</span><br>তোমার বন্ধু,<strong lang="en">Shafial</strong></p>
               <button class="lastwish-replay" id="lastwishReplay" type="button" hidden>&#2438;&#2476;&#2494;&#2480; &#2476;&#2503;&#2482;&#2497;&#2472; &#2451;&#2524;&#2494;&#2451;</button>
+              <details class="lastwish-turn">
+                <summary>এবার তোমার পালা</summary>
+                <div class="lastwish-reply">
+                  <label for="lastwishReply">আমাদের পরের দেখা হলে প্রথমে কী করব?</label>
+                  <p class="lastwish-reply-help" id="lastwishReplyHelp">ইচ্ছে হলে উত্তরটা কপি করে আমাদের চ্যাটে পাঠিয়ে দিও।</p>
+                  <textarea id="lastwishReply" aria-describedby="lastwishReplyHelp" rows="3"></textarea>
+                  <button id="lastwishReplyCopy" type="button">উত্তর কপি করো</button>
+                  <p class="lastwish-reply-status" id="lastwishReplyStatus" role="status"></p>
+                </div>
+              </details>
               <span class="lastwish-end" lang="en">THE END OF THIS PAGE. MORE DAYS TO MAKE MEMORIES.</span>
             </div>
           </section>
@@ -2240,6 +2284,31 @@
       replay.hidden = false;
       replay.addEventListener('click', playCelebration);
       observer?.observe(greeting);
+    })();
+
+    (() => {
+      const reply = document.getElementById('lastwishReply');
+      const copy = document.getElementById('lastwishReplyCopy');
+      const status = document.getElementById('lastwishReplyStatus');
+
+      reply.addEventListener('input', () => { status.textContent = ''; });
+      copy.addEventListener('click', async () => {
+        const text = reply.value.trim();
+        if (!text) {
+          status.textContent = 'আগে তোমার উত্তরটা লিখে ফেলো।';
+          reply.focus();
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(text);
+          status.textContent = 'কপি হয়েছে। এবার আমাদের চ্যাটে পেস্ট করে পাঠাও।';
+        } catch {
+          reply.focus();
+          reply.select();
+          status.textContent = 'উত্তরটা সিলেক্ট করা আছে। এখান থেকে কপি করে চ্যাটে পাঠাও।';
+        }
+      });
     })();
 
     const birthdayNews = document.getElementById('birthdayNews');
